@@ -1,10 +1,9 @@
 import TextDisplay from "./TextDisplay";
 
 const doMath = (item, idx, isPositive, multiplies) => {
-  if (!parseInt(item)) return 0;
-  console.log(item, "test");
-  var calc = (parseInt(item) * 0.2 * idx * multiplies) / 100;
-  return isPositive ? calc + parseInt(item) : calc - parseInt(item);
+  if (!parseFloat(item)) return 0;
+  var calc = (parseFloat(item) * 0.2 * idx * multiplies) / 100;
+  return isPositive ? calc + parseFloat(item) : calc - parseFloat(item);
 };
 
 function FlexBox(props) {
@@ -15,16 +14,15 @@ function FlexBox(props) {
         <div className="flex" key={i}>
           <span>{i * props.multiples}%</span>
           <TextDisplay
-            key={i}
             header={"h5"}
             className={"bullish"}
-            text={doMath(props.ltp, i, true, props.multiples)}
+            text={doMath(props.ltp, i, true, props.multiples).toFixed(2)}
           ></TextDisplay>
           <span>-{i * props.multiples}%</span>
           <TextDisplay
             header={"h5"}
             className={"bearish"}
-            text={doMath(props.ltp, i, false, props.multiples)}
+            text={doMath(props.ltp, i, false, props.multiples).toFixed(2)}
           ></TextDisplay>
         </div>
       );
@@ -32,7 +30,7 @@ function FlexBox(props) {
     return rows;
   };
 
-  return <div className="flex-container">{generateCalc(props.ltp)}</div>;
+  return <div className="flex-container">{generateCalc()}</div>;
 }
 
 export default FlexBox;
