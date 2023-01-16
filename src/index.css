@@ -11,3 +11,81 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.bullish{
+  color: green;
+}
+
+.bluish{
+  color: #387ED1;
+  margin-top:0px;
+  margin-bottom: 0px;
+}
+
+.bearish{
+  color: red;
+}
+
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-container > div {
+  margin-top: 10px !important;
+  margin: 0;
+  padding: 2px;
+  font-size: 30px;
+  border:1px;
+  border-color: black;
+  border-style: dashed;
+  width:40px;
+}
+
+
+.flex{
+  justify-content: center;
+  display: flex;
+  flex-direction: row;
+  flex:50%;
+  padding: 2px;
+}
+
+span{
+  margin-right: 20px;
+  margin-left: 20px;
+  color:black;
+  font-size: 25px;
+  font-weight: 700;
+}
+.userInput{
+  margin-top:20px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  margin-bottom:20px;
+}
+
+h5 
+{
+  margin-top: 0.5px !important;
+  margin-bottom: 0.5px !important;
+}
+h4{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+h6{
+  color:black;
+  width:20%;
+  margin:0;
+}
+
+.select{
+  margin: 0 0;
+  width: 30%;
+}
+.textField{
+  margin: 0 50px;
+  width: 50%;
+}
