@@ -4,6 +4,7 @@ import TextDisplay from './components/TextDisplay';
 import TextBoxInput from './components/TextBoxInput';
 import FlexBox from './components/FlexBox';
 import DropDownInput from './components/DropDownInput';
+import Button from '@mui/material/Button';
 import { useState } from 'react';
 
 function App() {
@@ -17,24 +18,17 @@ function App() {
 
   const [multiples,setMultiples] = useState("");
   const [ltp,setLtp] = useState("");
- 
+  const [type,setType] = useState(true);
+  const marginText = type===true? 'Intraday (Margin)':'';
+ console.log('type', type)
   return (
     
     <div className="App">
       <header className="App-header">
-      {/* <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a> */}
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-       <TextDisplay className={'bluish'} text="Zerodha Intraday(margin) Calculator" header={'h4'}></TextDisplay>
+       <TextDisplay className={'bluish'} text={"Zerodha "+marginText+" Calculator"} header={'h4'}></TextDisplay><Button  variant="contained" onClick={()=>setType(!type)}>Click to change calculator</Button>
     <div className="userInput">      <TextBoxInput TextLog={TextLog}></TextBoxInput>
           <h6>Multiples of</h6><DropDownInput SelectLog={SelectLog} ></DropDownInput></div>
-          <FlexBox ltp={ltp} multiples={multiples} ></FlexBox>
+          <FlexBox ltp={ltp} type={type} multiples={multiples} ></FlexBox>
         
       </header>
     </div>
