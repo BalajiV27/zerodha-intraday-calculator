@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import TextField from "@mui/material/TextField";
 
-function TextBoxInput(props) {
+function TextBoxInput({ TextLog }) {
   const [ltp, setLtp] = useState("");
   useEffect(() => {
-    props.TextLog(ltp);
-  }, [ltp, props]);
+    TextLog(ltp);
+  }, [ltp]);
 
   const updateValue = (event) => {
     setLtp(event.target.value);
@@ -18,9 +18,8 @@ function TextBoxInput(props) {
         label="LTP"
         value={ltp}
         variant="outlined"
-        onChange={(e) => updateValue(e)}
+        onChange={updateValue}
       />
-      {/* <input type="text" name="name" value={ltp} onChange={e => updateValue(e)} /> */}
     </div>
   );
 }
