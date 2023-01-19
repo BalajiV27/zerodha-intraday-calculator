@@ -65,7 +65,16 @@ span{
   display: flex;
   margin-bottom:20px;
 }
-
+.full{
+  height:502px;
+}
+.profitUserInput{
+  margin-top:20px;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  display: flex;
+  margin-bottom:20px;
+}
 h5 
 {
   margin-top: 0.5px !important;
