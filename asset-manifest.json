@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/zerodha-intraday-calculator/static/css/main.d4f3ce37.css",
-    "main.js": "/zerodha-intraday-calculator/static/js/main.52fe18d2.js",
+    "main.css": "/zerodha-intraday-calculator/static/css/main.92c54163.css",
+    "main.js": "/zerodha-intraday-calculator/static/js/main.fa0a0828.js",
     "static/js/787.37b08e2a.chunk.js": "/zerodha-intraday-calculator/static/js/787.37b08e2a.chunk.js",
     "index.html": "/zerodha-intraday-calculator/index.html",
-    "main.d4f3ce37.css.map": "/zerodha-intraday-calculator/static/css/main.d4f3ce37.css.map",
-    "main.52fe18d2.js.map": "/zerodha-intraday-calculator/static/js/main.52fe18d2.js.map",
+    "main.92c54163.css.map": "/zerodha-intraday-calculator/static/css/main.92c54163.css.map",
+    "main.fa0a0828.js.map": "/zerodha-intraday-calculator/static/js/main.fa0a0828.js.map",
     "787.37b08e2a.chunk.js.map": "/zerodha-intraday-calculator/static/js/787.37b08e2a.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d4f3ce37.css",
-    "static/js/main.52fe18d2.js"
+    "static/css/main.92c54163.css",
+    "static/js/main.fa0a0828.js"
   ]
 }
