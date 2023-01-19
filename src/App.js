@@ -29,7 +29,7 @@ function App() {
           text={"Zerodha " + marginText + " Calculator"}
           header={"h4"}
         ></TextDisplay>
-        <div>
+        <div className="divController">
           {calcType === "percent" && (
             <Button variant="contained" onClick={() => setType(!type)}>
               Margin Or Normal
@@ -37,7 +37,8 @@ function App() {
           )}
           <FormControlLabel
             control={<Switch defaultChecked onChange={handleCalcTypeChange} />}
-            label="Percent/Profit"
+            label="Profit/Percent"
+            labelPlacement="start"
           />
         </div>
         {calcType === "percent" ? (
