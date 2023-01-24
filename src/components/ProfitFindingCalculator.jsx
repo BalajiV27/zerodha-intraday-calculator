@@ -41,6 +41,18 @@ function ProfitFindingCalculator(props) {
         className={profit > 0 ? "bullish" : "bearish"}
         text={profit > 0 ? `Percent : ${profitPercent}%` : `Percent : ${profitPercent}%` }
       ></TextDisplay>
+      <div className="total-price">
+       <TextDisplay
+        header={"h4"}
+        className='black'
+        text={'Buy Price: '+ltp*lotSize}
+      ></TextDisplay>
+       <TextDisplay
+        header={"h4"}
+        className='black'
+        text={'Sell Price: '+sellPrice*lotSize}
+      ></TextDisplay>
+      </div>
     </div>
   );
 }
