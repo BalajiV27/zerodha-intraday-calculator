@@ -7,6 +7,7 @@ function ProfitFindingCalculator(props) {
   const [lotSize, setLotSize] = useState("");
   const [sellPrice, setSellPrice] = useState("");
   const [profit, setProfit] = useState("");
+  const [profitPercent,setProfitPercent] = useState("");
   const TextLog = (val) => {
     setLtp(val);
   };
@@ -20,6 +21,7 @@ function ProfitFindingCalculator(props) {
 
   useEffect(() => {
     setProfit(sellPrice * lotSize - ltp * lotSize);
+    setProfitPercent((((sellPrice-ltp)/100)*100).toFixed(2))
   }, [sellPrice, lotSize, ltp, props]);
 
   return (
@@ -33,6 +35,11 @@ function ProfitFindingCalculator(props) {
         header={"h3"}
         className={profit > 0 ? "bullish" : "bearish"}
         text={profit > 0 ? `Profit : ${profit}` : `Loss : ${profit}`}
+      ></TextDisplay>
+      <TextDisplay
+        header={"h4"}
+        className={profit > 0 ? "bullish" : "bearish"}
+        text={profit > 0 ? `Percent : ${profitPercent}%` : `Percent : ${profitPercent}%` }
       ></TextDisplay>
     </div>
   );
