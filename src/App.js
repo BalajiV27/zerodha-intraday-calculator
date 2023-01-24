@@ -1,35 +1,51 @@
-
-import './App.css';
-import TextDisplay from './components/TextDisplay';
-import TextBoxInput from './components/TextBoxInput';
-import FlexBox from './components/FlexBox';
-import DropDownInput from './components/DropDownInput';
-import Button from '@mui/material/Button';
-import { useState } from 'react';
+import "./App.css";
+import TextDisplay from "./components/TextDisplay";
+import Button from "@mui/material/Button";
+import { useState } from "react";
+import TargetFindingCalculator from "./components/TargetFindingCalculator";
+import ProfitFindingCalculator from "./components/ProfitFindingCalculator";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Switch from "@mui/material/Switch";
 
 function App() {
-  const TextLog = (val)=>{
-    setLtp(val);
-  }
+  const handleCalcTypeChange = () => {
+    const isPercentCalc = calcType === "profit" ? true : false;
+    if (isPercentCalc) {
+      setCalcType("percent");
+    } else {
+      setCalcType("profit");
+    }
+  };
+  const [type, setType] = useState(false);
+  const marginText = type === true ? "Intraday (Margin)" : "";
+  const [calcType, setCalcType] = useState("percent");
 
-  const SelectLog = (val)=>{
-    setMultiples(val);
-  }
-
-  const [multiples,setMultiples] = useState("");
-  const [ltp,setLtp] = useState("");
-  const [type,setType] = useState(true);
-  const marginText = type===true? 'Intraday (Margin)':'';
- console.log('type', type)
+  console.log("type", type);
   return (
-    
     <div className="App">
       <header className="App-header">
-       <TextDisplay className={'bluish'} text={"Zerodha "+marginText+" Calculator"} header={'h4'}></TextDisplay><Button  variant="contained" onClick={()=>setType(!type)}>Click to change calculator</Button>
-    <div className="userInput">      <TextBoxInput TextLog={TextLog}></TextBoxInput>
-          <h6>Multiples of</h6><DropDownInput SelectLog={SelectLog} ></DropDownInput></div>
-          <FlexBox ltp={ltp} type={type} multiples={multiples} ></FlexBox>
-        
+        <TextDisplay
+          className={"bluish"}
+          text={"Zerodha " + marginText + " Calculator"}
+          header={"h4"}
+        ></TextDisplay>
+        <div className="divController">
+          {calcType === "percent" && (
+            <Button variant="contained" onClick={() => setType(!type)}>
+              Switch To {type?  "Normal": 'Margin'}
+            </Button>
+          )}
+          <FormControlLabel
+            control={<Switch defaultChecked onChange={handleCalcTypeChange} />}
+            label="Profit/Percent"
+            labelPlacement="start"
+          />
+        </div>
+        {calcType === "percent" ? (
+          <TargetFindingCalculator type={type}></TargetFindingCalculator>
+        ) : (
+          <ProfitFindingCalculator></ProfitFindingCalculator>
+        )}
       </header>
     </div>
   );
