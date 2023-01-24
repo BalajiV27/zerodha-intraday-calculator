@@ -14,6 +14,7 @@ function TextBoxInput(props) {
   return (
     <div className="textField">
       <TextField
+        type="number"
         id="outlined-basic"
         label={props.label}
         value={ltp}
