@@ -16,7 +16,7 @@ function App() {
       setCalcType("profit");
     }
   };
-  const [type, setType] = useState(true);
+  const [type, setType] = useState(false);
   const marginText = type === true ? "Intraday (Margin)" : "";
   const [calcType, setCalcType] = useState("percent");
 
@@ -32,7 +32,7 @@ function App() {
         <div className="divController">
           {calcType === "percent" && (
             <Button variant="contained" onClick={() => setType(!type)}>
-              Margin Or Normal
+              Switch To {type?  "Normal": 'Margin'}
             </Button>
           )}
           <FormControlLabel
