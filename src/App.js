@@ -20,7 +20,6 @@ function App() {
   const marginText = type === true ? "Intraday (Margin)" : "";
   const [calcType, setCalcType] = useState("percent");
 
-  console.log("type", type);
   return (
     <div className="App">
       <header className="App-header">

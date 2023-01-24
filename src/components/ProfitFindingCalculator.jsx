@@ -25,7 +25,7 @@ function ProfitFindingCalculator(props) {
   }, [sellPrice, lotSize, ltp, props]);
 
   return (
-    <div class="full">
+    <div className="full">
       <div className="profitUserInput">
         <TextBoxInput label={"LTP"} TextLog={TextLog}></TextBoxInput>
         <TextBoxInput label={"Quantity"} TextLog={LotSizeLog}></TextBoxInput>
