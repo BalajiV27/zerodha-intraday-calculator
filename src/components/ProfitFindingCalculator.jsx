@@ -21,7 +21,7 @@ function ProfitFindingCalculator(props) {
 
   useEffect(() => {
     setProfit(sellPrice * lotSize - ltp * lotSize);
-    setProfitPercent((((sellPrice-ltp)/100)*100).toFixed(2))
+    setProfitPercent((((sellPrice-ltp)/ltp)*100).toFixed(2))
   }, [sellPrice, lotSize, ltp, props]);
 
   return (
