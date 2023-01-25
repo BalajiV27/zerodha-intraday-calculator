@@ -1,6 +1,15 @@
-# Getting Started with Create React App
+# Demo
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is hosted in Github IO (https://balajiv27.github.io/zerodha-intraday-calculator/).
+
+## Features 
+### 1) Delivery percentage calculator with 1% to 200%
+
+### 2) Margin percentage calculator. (Zerodha Intraday leverage of 5x)
+
+### 3) Profit calculator with percentage and price.
+
+
 
 ## Available Scripts
 
